@@ -1,7 +1,6 @@
 package com.example.testdaggerhilt
 
-class Car{
-    private val engine: Engine = Engine()
+class Car(private val engine: Engine){
 
     fun drive() {
         engine.start()
@@ -9,12 +8,13 @@ class Car{
 }
 
 fun main(){
-    val car:Car = Car()
+    val engine: Engine = Engine()
+    val car:Car = Car(engine)
     car.drive()
 }
 
 /*
-Problems
+Problems : SOLVED
 1. class Car not testable without Engine
 2. class Car not extensible (tomorrow if class Engine is defined as an interface with some derived classes implementing it)
 3. class Car is violating Single Responsibility Principle by doing these 2 things:-
