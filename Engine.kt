@@ -1,6 +1,8 @@
 package com.example.testdaggerhilt
 
-class Engine {
+import javax.inject.Inject
+
+class Engine @Inject constructor(){
     fun start(){
         println("Engine starting")
     }

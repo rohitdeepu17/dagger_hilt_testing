@@ -1,6 +1,8 @@
 package com.example.testdaggerhilt
 
-class Car(private val engine: Engine){
+import javax.inject.Inject
+
+class Car @Inject constructor(private val engine: Engine){
 
     fun drive() {
         engine.start()
@@ -8,8 +10,11 @@ class Car(private val engine: Engine){
 }
 
 fun main(){
-    val engine: Engine = Engine()
-    val car:Car = Car(engine)
+    println("Hello")
+    val carComponent: CarComponent = DaggerCarComponent.builder().build()
+
+    val car: Car = carComponent.getCarComponent()
+
     car.drive()
 }
 
