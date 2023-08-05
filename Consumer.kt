@@ -8,9 +8,7 @@ class Consumer{
 
     fun myConsumerFunction(){
         println("Hello")
-        val carComponent: CarComponent = DaggerCarComponent.builder().
-                                        carModule(CarModule(25)).
-                                        build()
+        val carComponent: CarComponent = DaggerCarComponent.factory().create(23)
 
         carComponent.inject(this)
 

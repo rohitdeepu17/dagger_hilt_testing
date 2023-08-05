@@ -6,10 +6,10 @@ import dagger.Provides
 import javax.inject.Named
 
 @Module
-class CarModule(private val speed: Int) {
+class CarModule() {
     @TruckQualifier
     @Provides
-    fun getTruckEngine(): Engine{
+    fun getTruckEngine(speed: Int): Engine{
         return TruckEngine(speed)
     }
 
