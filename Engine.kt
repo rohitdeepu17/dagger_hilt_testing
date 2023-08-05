@@ -12,7 +12,7 @@ class TruckEngine @Inject constructor(): Engine{
     }
 
 }
-class BikeEngine constructor(): Engine{
+class BikeEngine: Engine{
     override fun start(){
         println("Bike's Engine starting")
     }
