@@ -16,6 +16,10 @@ fun main(){
     val car: Car = carComponent.getCarComponent()
 
     car.drive()
+
+    val engine: Engine = carComponent.getEngine()
+    engine.start()
+
 }
 
 /*
