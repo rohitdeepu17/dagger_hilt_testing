@@ -1,10 +1,13 @@
 package com.example.testdaggerhilt
 
-import javax.inject.Inject
-
 class Consumer{
-    @Inject
     lateinit var car: Car
+
+    lateinit var engine1: Engine
+
+    lateinit var engine2: Engine
+
+    lateinit var engine3: Engine
 
     fun myConsumerFunction(){
         println("Hello")
@@ -12,7 +15,17 @@ class Consumer{
 
         carComponent.inject(this)
 
-        car.drive()
+        engine1 = carComponent.getTruckEngine()
+        engine2 = carComponent.getTruckEngine()
+
+        val carComponent1: CarComponent = DaggerCarComponent.factory().create(23)
+
+        engine3 = carComponent1.getTruckEngine()
+
+        println("Engine1 : ${engine1.hashCode()}")
+        println("Engine2 : ${engine2.hashCode()}")
+        println("Engine3 : ${engine3.hashCode()}")
+
     }
 }
 

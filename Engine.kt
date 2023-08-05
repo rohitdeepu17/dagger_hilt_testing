@@ -2,12 +2,14 @@ package com.example.testdaggerhilt
 
 import javax.inject.Inject
 import javax.inject.Named
+import javax.inject.Singleton
 
 interface Engine{
     fun start()
 }
 
-class TruckEngine(private val speed: Int): Engine{
+@Singleton
+class TruckEngine @Inject constructor(private val speed: Int): Engine{
     override fun start() {
         println("Truck's Engine starting at speed : $speed")
     }
