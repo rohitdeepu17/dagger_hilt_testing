@@ -3,9 +3,19 @@ package com.example.testdaggerhilt
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
+import javax.inject.Named
 
 @Module
-abstract class CarModule {
-    @Binds
-    abstract fun getTruckEngine(truckEngine: TruckEngine): Engine
+class CarModule {
+    @Named("truck")
+    @Provides
+    fun getTruckEngine(): Engine{
+        return TruckEngine()
+    }
+
+    @Named("bike")
+    @Provides
+    fun getBikeEngine(): Engine{
+        return BikeEngine()
+    }
 }
