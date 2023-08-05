@@ -6,7 +6,7 @@ import dagger.Provides
 @Module
 class CarModule {
     @Provides
-    fun getBikeEngine(): Engine{
-        return BikeEngine()
+    fun getTruckEngine(truckEngine: TruckEngine): Engine{
+        return truckEngine
     }
 }
