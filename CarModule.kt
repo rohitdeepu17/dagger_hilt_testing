@@ -7,7 +7,7 @@ import javax.inject.Named
 
 @Module
 class CarModule {
-    @Named("truck")
+    @TruckQualifier
     @Provides
     fun getTruckEngine(): Engine{
         return TruckEngine()
