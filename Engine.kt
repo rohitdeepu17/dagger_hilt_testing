@@ -7,9 +7,9 @@ interface Engine{
     fun start()
 }
 
-class TruckEngine: Engine{
+class TruckEngine(private val speed: Int): Engine{
     override fun start() {
-        println("Truck's Engine starting")
+        println("Truck's Engine starting at speed : $speed")
     }
 
 }
